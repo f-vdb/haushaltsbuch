@@ -1,0 +1,44 @@
+# 
+# Makefile-4
+# change the make file with make -f filename
+# 
+# Attention:
+# target: dependencies
+# [tab] system command   DON'T FORGET THE TAB AT THE BEGINNING OF THE LINE
+#
+CC= g++
+# c++0x
+# -c compile, but do not link
+# -O optimize  (-O1 or -O2 or -O3)
+#CFLAGS= -Wextra -Weffc++ -pedantic -O -std=c++0x -c
+# c++98
+CFLAGS= -Wextra -Weffc++ -pedantic -O -std=gnu++98 -c
+LDFLAGS=
+SOURCES= main.cpp OpenFile.cpp showMainMenu.cpp wrongInput.cpp
+OBJECTS= $(SOURCES:.cpp=.o)
+EXECUTABLE=haushaltsbuch	
+# install: all
+# 	mv $(EXECUTABLE) c:\...
+#
+all: $(SOURCES) $(EXECUTABLE)
+	del *.o		   # delete all object files IMPORTANT use cmd.exe or rm *.o
+	$(EXECUTABLE)  # start the programm
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+# $< current file
+# $@ 
+.cpp.o:
+	$(CC) $(CFLAGS) $< -o $@
+
+# make -f Makefile-4 clean
+clean:
+	del *.o
+
+# .PHONY tells Make which targets are not files.
+# This avoids conflict with file of the same name, and improve performance.
+# Generally all targets, which do not produce the file with the target name,
+# should be PHONY.
+PHONY: clean all
+
+

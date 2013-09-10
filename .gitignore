@@ -1,0 +1,11 @@
+# ignore all files ending with .exe in the hole project
+
+*.exe
+*.o
+*.out
+haushaltsbuch
+*.txt
+ausgaben*
+BACKUP*
+
+

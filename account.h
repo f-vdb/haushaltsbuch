@@ -39,8 +39,8 @@ void sortAccountDate(std::vector<Account>& vecAccount);
 void sortAccountDateReverse(std::vector<Account>& vecAccount);
 void sortAccountTimestampReverse(std::vector<Account>& vecAccount);
 void inputAccount(std::vector<Account>& vecAccount,
-          std::vector<std::string>& vecOberKat,
-          std::vector<std::string>& vecKat);
+                  std::vector<std::string>& vecOberKat,
+                  std::vector<std::string>& vecKat);
 
 unsigned int userInputNumber(unsigned int size);
 #endif // ACCOUNT_H_
